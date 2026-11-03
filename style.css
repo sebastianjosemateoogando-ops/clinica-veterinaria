@@ -1,0 +1,205 @@
+/* ==========================================================================
+   VARIABLES DE PALETA DE COLORES
+   ========================================================================== */
+:root {
+    --color-azul-cielo: #BDE0FE;
+    --color-profesional: #247BA0;   /* Azul profesional para botón de correo */
+    --color-turquesa: #2A9D8F;      /* Turquesa para botón de WhatsApp */
+    --color-blanco: #FFFFFF;
+    --color-noche: #183153;
+    --transition-speed: 0.3s;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    color: var(--color-noche);
+    padding-top: 70px;
+    background-color: var(--color-blanco);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 100 100"><g fill="%23183153" fill-opacity="0.05"><path d="M30,58 C25,58 20,63 20,70 C20,78 27,85 35,85 C43,85 47,78 47,70 C47,63 35,58 30,58 Z M18,48 C14,48 10,43 10,37 C10,31 14,27 18,27 C22,27 26,31 26,37 C26,43 22,48 18,48 Z M32,38 C28,38 24,33 24,27 C24,21 28,17 32,17 C36,17 40,21 40,27 C40,33 36,38 32,38 Z M48,42 C44,42 40,37 40,31 C40,25 44,21 48,21 C52,21 56,25 56,31 C56,37 52,42 48,42 Z"/></g><g fill="%23247BA0" fill-opacity="0.1"><path d="M75,20 C71,20 68,23 68,27 C68,32 72,36 77,36 C82,36 85,32 85,27 C85,23 81,20 75,20 Z M65,12 C62,12 59,15 59,18 C59,21 62,24 65,24 C68,24 71,21 71,18 C71,15 68,12 65,12 Z M77,10 C74,10 72,12 72,15 C72,18 74,20 77,20 C80,20 82,18 82,15 C82,12 80,10 77,10 Z M88,14 C85,14 83,16 83,19 C83,22 85,24 88,24 C91,24 93,22 93,19 C93,16 91,14 88,14 Z"/></g></svg>');
+    background-repeat: repeat;
+    line-height: 1.6;
+}
+
+/* Clases de colores personalizados */
+.text-noche { color: var(--color-noche) !important; }
+.text-profesional { color: var(--color-profesional) !important; }
+.text-turquesa { color: var(--color-turquesa) !important; }
+
+/* ==========================================================================
+   BOTONES CORREGIDOS CON TEXTO VISIBLE
+   ========================================================================== */
+.btn-profesional {
+    background-color: var(--color-profesional) !important;
+    color: #FFFFFF !important;
+    transition: all var(--transition-speed) ease;
+}
+.btn-profesional:hover {
+    background-color: #1b5d7a !important;
+    color: #FFFFFF !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(36, 123, 160, 0.3);
+}
+
+.btn-turquesa {
+    background-color: var(--color-turquesa) !important;
+    color: #FFFFFF !important;
+    transition: all var(--transition-speed) ease;
+}
+.btn-turquesa:hover {
+    background-color: #238075 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(42, 157, 143, 0.3);
+}
+
+/* Navbar difuminado */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(189, 224, 254, 0.4);
+}
+.navbar .nav-link {
+    color: var(--color-noche) !important;
+    font-weight: 600;
+    transition: color var(--transition-speed);
+}
+.navbar .nav-link:hover, .navbar .nav-link.active {
+    color: var(--color-profesional) !important;
+}
+
+/* Secciones con fondo sólido Azul Cielo */
+.bg-solid-sky {
+    background-color: var(--color-azul-cielo) !important;
+}
+
+/* Tarjetas y contenedores con Fondo Blanco Sólido */
+.solid-card, .service-card, .team-card {
+    background-color: #FFFFFF !important;
+    border: 1px solid rgba(36, 123, 160, 0.15) !important;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(24, 49, 83, 0.08);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.service-card:hover, .team-card:hover, .contact-info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(24, 49, 83, 0.15) !important;
+}
+
+/* Inputs de formularios sólidos */
+.solid-input {
+    background-color: #FFFFFF;
+    border: 1px solid #ced4da;
+    color: var(--color-noche);
+}
+.solid-input:focus {
+    background-color: #FFFFFF;
+    border-color: var(--color-profesional);
+    box-shadow: 0 0 0 0.25rem rgba(36, 123, 160, 0.25);
+}
+
+/* ==========================================================================
+   SECCIÓN INICIO (HERO BANNER) Y ANIMACIONES
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 85vh;
+    background: url('https://img.magnific.com/premium-photo/dogs-cats-peeking-clear-wooden-top-line-petshop-banner-happy-smile-funny-generative-ai-image-weber_31965-203961.jpg') no-repeat center center/cover;
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(24, 49, 83, 0.75);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Testimonios y Animaciones */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.1); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.1); }
+    70% { transform: scale(1); }
+}
+
+.heartbeat-avatar {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    animation: heartbeat 1.8s infinite ease-in-out;
+    border: 3px solid var(--color-turquesa);
+}
+
+.rainbow-card-1 { border-left: 6px solid var(--color-profesional) !important; }
+.rainbow-card-2 { border-left: 6px solid var(--color-turquesa) !important; }
+.rainbow-card-3 { border-left: 6px solid #F39C12 !important; }
+.rainbow-card-4 { border-left: 6px solid #9B59B6 !important; }
+.rainbow-card-5 { border-left: 6px solid #E74C3C !important; }
+.rainbow-card-6 { border-left: 6px solid #1ABC9C !important; }
+.rainbow-card-7 { border-left: 6px solid #34495E !important; }
+.rainbow-card-8 { border-left: 6px solid var(--color-profesional) !important; }
+
+.custom-carousel-btn {
+    width: 50px;
+    height: 50px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    opacity: 1;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev-outside { left: -20px; }
+.next-outside { right: -20px; }
+
+.hover-phone {
+    transition: color var(--transition-speed) ease;
+}
+.hover-phone:hover {
+    color: var(--color-turquesa) !important;
+}
+
+.social-icon {
+    color: var(--color-blanco);
+    transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+.social-icon:hover {
+    color: var(--color-azul-cielo) !important;
+    transform: translateY(-4px) scale(1.15);
+}
+
+/* Footer Sólido con Fondo Azul Noche y Línea Divisoria en Azul Cielo (#BDE0FE) */
+.bg-noche {
+    background-color: var(--color-noche) !important;
+}
+
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-azul-cielo);
+    opacity: 0.8;
+}
+
+@media (max-width: 991.88px) {
+    .prev-outside { left: 0px; }
+    .next-outside { right: 0px; }
+}
